@@ -1,0 +1,57 @@
+==69732== Memcheck, a memory error detector
+==69732== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==69732== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==69732== Command: ./swish
+==69732== Parent PID: 69687
+==69732== 
+==69732== 
+==69732== Process terminating with default action of signal 1 (SIGHUP)
+==69732==    at 0x4967D40: read (read.c:26)
+==69732==    by 0x4906277: _IO_file_underflow@@GLIBC_2.17 (fileops.c:516)
+==69732==    by 0x49072BF: _IO_default_uflow (genops.c:362)
+==69732==    by 0x48FA373: _IO_getline_info (iogetline.c:60)
+==69732==    by 0x48F9193: fgets (iofgets.c:53)
+==69732==    by 0x1096E3: main (swish.c:39)
+==69732== 
+==69732== HEAP SUMMARY:
+==69732==     in use at exit: 2,080 bytes in 3 blocks
+==69732==   total heap usage: 3 allocs, 0 frees, 2,080 bytes allocated
+==69732== 
+==69732== 32 bytes in 1 blocks are still reachable in loss record 1 of 3
+==69732==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==69732==    by 0x109753: strvec_init (string_vector.c:14)
+==69732==    by 0x109243: main (swish.c:33)
+==69732== 
+==69732== 1,024 bytes in 1 blocks are still reachable in loss record 2 of 3
+==69732==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==69732==    by 0x48F88F3: _IO_file_doallocate (filedoalloc.c:101)
+==69732==    by 0x49071FF: _IO_doallocbuf (genops.c:347)
+==69732==    by 0x49071FF: _IO_doallocbuf (genops.c:342)
+==69732==    by 0x49065C7: _IO_file_overflow@@GLIBC_2.17 (fileops.c:744)
+==69732==    by 0x4905717: _IO_new_file_xsputn (fileops.c:1243)
+==69732==    by 0x4905717: _IO_file_xsputn@@GLIBC_2.17 (fileops.c:1196)
+==69732==    by 0x48F22D3: outstring_func (vfprintf-internal.c:239)
+==69732==    by 0x48F22D3: __vfprintf_internal (vfprintf-internal.c:1517)
+==69732==    by 0x48E0A63: printf (printf.c:33)
+==69732==    by 0x10925F: main (swish.c:38)
+==69732== 
+==69732== 1,024 bytes in 1 blocks are still reachable in loss record 3 of 3
+==69732==    at 0x4865058: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-arm64-linux.so)
+==69732==    by 0x48F88F3: _IO_file_doallocate (filedoalloc.c:101)
+==69732==    by 0x49071FF: _IO_doallocbuf (genops.c:347)
+==69732==    by 0x49071FF: _IO_doallocbuf (genops.c:342)
+==69732==    by 0x490633F: _IO_file_underflow@@GLIBC_2.17 (fileops.c:485)
+==69732==    by 0x49072BF: _IO_default_uflow (genops.c:362)
+==69732==    by 0x48FA373: _IO_getline_info (iogetline.c:60)
+==69732==    by 0x48F9193: fgets (iofgets.c:53)
+==69732==    by 0x1096E3: main (swish.c:39)
+==69732== 
+==69732== LEAK SUMMARY:
+==69732==    definitely lost: 0 bytes in 0 blocks
+==69732==    indirectly lost: 0 bytes in 0 blocks
+==69732==      possibly lost: 0 bytes in 0 blocks
+==69732==    still reachable: 2,080 bytes in 3 blocks
+==69732==         suppressed: 0 bytes in 0 blocks
+==69732== 
+==69732== For lists of detected and suppressed errors, rerun with: -s
+==69732== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
