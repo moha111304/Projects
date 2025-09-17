@@ -1,0 +1,29 @@
+Method                        ArrayList Runtime    LinkedList Runtime
+
+boolean add(T element)            O(1)-O(n)               O(n)
+Explanation: In the array list implementation adding an element takes constant time, O(1), as it just setting the end
+of the array to an element, but growing the Array takes O(n) time. For the linked list, the operation takes O(n) time
+as it involves, traversing the entire list until a null node is found, and creating a node and setting it to
+the end.
+
+T getMax()                         O(1)-O(n)              O(n)
+Explanation: In the array list, if the list is sorted and iff the list is full (size equals the array length),
+returning the last element is constant time, O(1). If the list is not full, iterating in reverse to find the last
+non-null element takes O(n), where n is the array length. If the list is not sorted, iterating through the entire
+list to find the maximum element takes O(n), where n is the array length. For the linked list, if the list is or
+isn't sorted, it involves iteration by traversing the entire list, which takes O(n) time.
+
+intersect(List<T> otherList)        O(n^2)                O(n)
+Explanation: In the array list a nested loops iterates over the elements in both the current list and
+otherList. In the worst case, each element in the current list is compared with every element in otherList.
+This results in a time complexity of O(n^2) or O(n*m), if the size of the other list isn't similar but this
+can be just simplified to O(n^2). This leaves it as the highest growing term. For the linked listThe while loop
+iterates over the elements in both lists, and in the worst case, it has a linear time complexity of O(n).
+
+reverse()                            O(n)                 O(n)
+Explanation: In the array list each iteration of the loop performs a constant-time operation of swapping,
+the elements and only half of the list is traversed, the overall time complexity is O(n). For the linked list
+the while loop runs through each node in the linked list once, and reverses the order by updating pointers and
+reversing the link so the overall time complexity is O(n).
+
+Written by Ayub Mohamoud, moha1660
